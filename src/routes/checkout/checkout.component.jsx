@@ -28,7 +28,7 @@ const Checkout = () => {
             </div>
 
             {cartItems.map((item) => {
-                const { name, id, price, quantity } = item
+                const { id } = item
                 return (
                     <CheckoutItem key={id} item={item} />
                 )

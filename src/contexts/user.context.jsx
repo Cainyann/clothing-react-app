@@ -14,14 +14,14 @@ export const UserProvider = ({children}) => {
 
     useEffect(() => {
         const subscribe = onAuthStateChangedListener((user) => {
-            // console.log(user); //监听身份验证状态 输出null/user
+            console.log(user); //监听身份验证状态 输出null/user
             // setCurrentUser(user)
             if(user) {
                 createUserDocumentFromAuth(user)
+                setCurrentUser(user)
             }else{
                 setCurrentUser(user)
             }
-            
         })
         return subscribe
     },[])
